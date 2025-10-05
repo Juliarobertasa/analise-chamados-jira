@@ -1,6 +1,6 @@
 # Projeto de Business Intelligence: Proposta de Otimização de Atendimento (SaaS)
 
-Este projeto de Business Intelligence (BI) foi concebido para resolver o desafio da consolidação manual e propensa a erros de chamados de Customer Service (CS) (dados extraídos do Jira) em um ambiente de SaaS.
+Este projeto de Business Intelligence (BI) foi concebido para resolver o desafio da consolidação manual de chamados de Customer Service (CS) (dados extraídos do Jira) em um ambiente de SaaS.
 
 A proposta de solução, criada como um MVP (Produto Mínimo Viável), consiste em um fluxo de dados automatizado no Power BI para tratamento, modelagem e visualização. O objetivo é implementar um dashboard estratégico que garanta a confiabilidade dos dados, elimine horas de trabalho repetitivo e forneça insights rápidos e precisos para a gestão e otimização do serviço ao cliente.
 
