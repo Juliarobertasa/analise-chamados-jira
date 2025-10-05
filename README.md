@@ -1,4 +1,4 @@
-# Projeto de Business Intelligence: Proposta de Otimização de Atendimento (SaaS)
+# Projeto de Business Intelligence: Proposta de Otimização de Registro de Solicitações (SaaS)
 
 Este projeto de Business Intelligence (BI) foi concebido para resolver o desafio da consolidação manual de chamados de Customer Service (CS) (dados extraídos do Jira) em um ambiente de SaaS.
 
