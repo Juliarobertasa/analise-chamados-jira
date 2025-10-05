@@ -2,47 +2,63 @@
 
 ## Contexto e Problema de Negócio
 
-O ponto de partida: descreva o cenário atual e o objetivo estratégico do projeto.
+Atualmente, o registro dos chamados oriundos do Jira é realizado de forma manual no Notion. Cada chamado precisa ser inserido individualmente.
 
-**Dor identificada:**  
-> Consumo de tempo e erros na consolidação de chamados de CS.
+A partir desse registro, são feitas análises como:
 
-**Cenário atual:**  
+- Quantidade total de chamados;
+- Tipos de solicitações mais recorrentes;
+- Áreas com maior volume de demandas;
+- Comparativo entre chamados concluídos e cancelados.
+
+### Cenário atual
 - Registro manual dos chamados  
 - Alta incidência de erros  
-- Falta de visibilidade e controle dos dados  
+- Falta de visibilidade e controle dos dados 
 
-**Objetivo estratégico:**  
-Reduzir o esforço manual e aumentar a confiabilidade das informações.
+## Principais problemas
 
----
+Dos problemas identificados no processo atual de registro e análise de chamados, destacam-se os seguintes pontos:
 
-## Objetivos e KPIs Chave
+- Consumo excessivo de tempo no registro dos chamados.
+- Processo lento e suscetível a erros, por ser realizado manualmente.
+- Falta de precisão e confiabilidade nos dados utilizados para análise.
+- Limitação nas análises disponíveis, restringindo a visão estratégica.
+- Dificuldade na tomada de decisão, devido à baixa qualidade e atraso das informações.
+ 
 
-Quais perguntas o Dashboard precisa responder? Liste as métricas que guiarão a análise (os KPIs).
+## Objetivo estratégico
 
-**Exemplos de objetivos e KPIs:**  
+Dos objetivos gerais, destacam-se:
 
-| Objetivo                            | KPI/Métrica                      |
-|------------------------------------|---------------------------------|
-| Reduzir o tempo médio de tratamento | Tempo Médio de Tratamento (TMT) |
-| Identificar chamados críticos       | Número de chamados por prioridade|
-| Melhorar a visibilidade             | Dashboard atualizado diariamente |
-
-> Observação: métricas podem ser implementadas em DAX no Power BI.
-
+- Reduzir o esforço manual, eliminando etapas repetitivas e suscetíveis a erros.
+- Redirecionar o tempo investido em registros para atividades mais estratégicas.
+- Aumentar a confiabilidade das informações, garantindo maior precisão nos dados.
+- Relacionar diferentes informações, possibilitando análises mais aprofundadas.
+- Reduzir o tempo de tratamento dos chamados, agilizando a resposta ao cliente.
+- Identificar chamados críticos, priorizando atendimentos de maior impacto.
+- Melhorar o acompanhamento das tratativas em tempo real, aumentando a transparência.
+- Identificar gargalos e gerar insights, contribuindo para a melhoria contínua do produto.
+  
 ---
 
 ## Metodologia de Análise
 
-O seu "Plano de Ataque": descreva a abordagem usada para ir do problema à solução.
+Para o desenvolvimento deste projeto, foram aplicadas metodologias de Business Intelligence (BI) e de metodologia ágil (Agile). O ciclo de BI incluiu ETL, modelagem de dados e criação de dashboards, garantindo que os dados fossem transformados em informações confiáveis e acionáveis. A abordagem ágil permitiu iterações rápida e ajustes incrementais, assegurando que o dashboard atendesse às necessidades do negócio de forma eficiente.
 
-**Abordagem sugerida:**  
-1. **ETL (Extração, Transformação e Carga)**  
-   - Consolidar dados de todas as fontes  
-2. **Modelagem Estrela**  
-   - Criar tabelas fato e dimensão para análise eficiente  
-3. **Validação com usuários-chave**  
-   - Ajustar métricas e dashboards conforme feedback  
+1. **ETL (Extração, Transformação e Carga)**
+   - **Extração:** coletar dados do Jira (via exportação CSV).
+   - **Transformação:** tratar e padronizar os dados, corrigindo inconsistências, duplicidades e formatos divergentes.
+   - **Carga:** consolidar os dados tratados em arquivo CSV exportadas do Jira, organizadas e estruturadas para análise no Power BI.
 
-> A metodologia pode ser aplicada em ciclos ágeis, criando um MVP do dashboard e evoluindo conforme o uso.
+2. **Modelagem de Dados**
+   - Criar um **modelo de dados eficiente** para suportar análises rápidas e precisas.
+   - Definir **tabelas Fato** (ex.: Chamados) e **Dimensões** (ex.: Tempo, CS Team, Prioridade) com relacionamentos claros.
+
+3. **Desenvolvimento de Métricas e Dashboards**
+   - Construir medidas e cálculos DAX, como Tempo Médio de Tratamento.
+   - Criar dashboards interativos com filtros, gráficos e tabelas, facilitando o acompanhamento.
+
+4. **Iteração e Melhoria Contínua**
+   - Aplicar metodologia ágil, implementando melhorias incrementalmente.
+   - Incorporar novas fontes de dados, métricas e análises conforme evolução das necessidades do negócio.
