@@ -2,14 +2,7 @@
 
 ## 1. Fontes de Dados
 
-De onde vieram os dados e como eles se conectam.  
-
-**Exemplo:**  
-> Extração do sistema Jira via API ou exportação CSV.  
-
-**Observações:**  
-- Garantir atualização periódica das fontes  
-- Validar integridade dos dados antes da carga  
+No MVP, os dados são exportados diretamente do Jira por meio de planilhas CSV. Nas próximas versões, será implementada uma integração via API, permitindo a atualização automática e em tempo real dos dados, eliminando a necessidade de exportações manuais. 
 
 **Diagrama simplificado do fluxo de dados:**  
 
