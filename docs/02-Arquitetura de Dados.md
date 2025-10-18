@@ -35,7 +35,7 @@ As principais medidas e fórmulas DAX utilizadas no dashboard foram:
 
 | Métrica           | Medidas e Cálculos | Descrição  |                                    
 |-------------------|----------------------------------------------------------|----------------------------------------------------------|
-| Tempo de Resolução (HH:MM:SS)     | VAR hours = ROUNDDOWN([tempo de resolucao]/ 3600, 0) \ VAR minutes = ROUNDDOWN(MOD([tempo de resolucao], 3600) / 60, 0) \ VAR seconds = INT(MOD([tempo de resolucao], 60))|Converte o tempo de resolução em segundos para o formato legível `HH:MM:SS`  |
+| Tempo de Resolução (HH:MM:SS)     | `VAR hours = ROUNDDOWN([tempo de resolucao]/ 3600, 0) \ VAR minutes = ROUNDDOWN(MOD([tempo de resolucao], 3600) / 60, 0) \ VAR seconds = INT(MOD([tempo de resolucao], 60))` |Converte o tempo de resolução em segundos para o formato legível `HH:MM:SS`  |
 | **Semana do Mês**              | `"Semana " & 1 + WEEKNUM('DIM - Calendar Resolucao'[Date]) - WEEKNUM(STARTOFMONTH('DIM - Calendar Resolucao'[Date]))` | Identifica a semana do mês para cada data, facilitando análises temporais. |
 | **Chamados**                   | `COUNTROWS('FT - Chamados')` | Conta o total de registros (linhas) na tabela de fatos de chamados. |
 | **Total de Chamados**          | `DISTINCTCOUNT('FT - Chamados'[Chave do chamado])` | Conta o número de chamados distintos, evitando duplicidades. |
