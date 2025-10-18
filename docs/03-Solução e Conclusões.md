@@ -2,21 +2,21 @@
 
 ## 1. Interface e Design
 
-Como o Dashboard está estruturado (páginas, filtros e elementos visuais chave).  
+Estrutura do dashboard (páginas, filtros e elementos visuais chave).  
 
 **Exemplo de estrutura:**  
 - **Número de páginas:** 3  
-  1. Visão Geral  
-  2. Detalhe de Time  
-  3. Análise de Causas  
+  - Visão Geral  
+  - Quantidade por área  
+  - Análise por relator  
 - **Filtros utilizados:**  
   - Temporal (período de análise)  
-  - Prioridade  
-  - Status do chamado  
+  - Tipo de solicitação
+  - Cliente  
 - **Elementos visuais:**  
   - Gráficos de barras e linhas  
   - Tabelas detalhadas  
-  - Cards de KPIs  
+  - Cards de contagem 
 - **Screenshots:**  
   > Inserir imagens exportadas do Power BI ou links para visualização
 
@@ -27,11 +27,11 @@ Como o Dashboard está estruturado (páginas, filtros e elementos visuais chave)
 As descobertas mais importantes a partir da análise do Dashboard.  
 
 **Exemplos de insights:**  
-- 70% dos chamados estão concentrados em 3 tipos de problemas, sugerindo foco na documentação.  
-- Tempo médio de tratamento (TMT) elevado em determinados times, apontando necessidade de treinamento.  
-- Chamados críticos não estão sendo tratados dentro do SLA, indicando oportunidade de melhoria nos processos.  
-
-> Observação: insights devem ser claros, acionáveis e diretamente ligados aos KPIs do dashboard.
+- Identificação dos **relatores que mais registram chamados com cancelamento**.  
+- Levantamento das **solicitações mais recorrentes**.  
+- Análise dos **clientes com maior volume de solicitações**.  
+- Mapeamento das **principais categorias de chamados**.  
+- Avaliação de **quais áreas de desenvolvimento recebem mais demandas**.
 
 ---
 
@@ -41,8 +41,7 @@ O que falta e quais são as recomendações futuras para evolução do Dashboard
 
 **Exemplos:**  
 - Conectar o Dashboard com a API oficial do Jira para atualização automática dos dados.  
-- Expandir a análise para incluir dados de satisfação do cliente (CSAT).  
-- Implementar alertas automáticos para chamados críticos.  
-- Evoluir visualizações com mapas de calor e dashboards interativos para análise detalhada.
+- Criar uma visualização com os tickets individualmente, com o tempo de resposta.  
+- Relacionar chamados que estão sendo abertos e fechados no mesmo dia.
+- Relacionar volume de chamados por área, quantidade, tipo de solicitação e tempo de conclusão.
 
-> Recomenda-se implementar de forma incremental, priorizando as funcionalidades de maior impacto primeiro.
