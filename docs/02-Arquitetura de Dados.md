@@ -16,29 +16,32 @@ Descreva o modelo de dados (Esquema Estrela ou Floco de Neve) e as principais ta
 
 | Tipo      | Nome da Tabela       | Descrição                                      |
 |-----------|-------------------|-----------------------------------------------|
-| Fato      | Chamados           | Contém dados dos chamados, tempos e status    |
-| Dimensão  | Tempo              | Informações de datas e períodos               |
-| Dimensão  | CS Team            | Informações sobre os membros da equipe CS     |
-| Dimensão  | Prioridade         | Classificação dos chamados por prioridade     |
+| Fato      | FT - Chamados           | Contém dados dos chamados, tempos, status e outras informações relevantes   |
+| Fato      | FT - Área relacionadas  | Informações de áreas (Front-end, Back-end, Produto)               |
+| Dimensão  | DIM - Calendar Resolução             | Tempo de resolução de cada chamado     |
 
-**Relacionamentos principais:**  
-- Chamados → Tempo (1:N)  
-- Chamados → CS Team (1:N)  
-- Chamados → Prioridade (1:N)
+
+**Relacionamentos:**  
+- FT - Chamados → DIM - Calendar Resolução (N:1)  
+- FT - Chamados → FT - Área relacionadas (1:N)  
 
 ---
 
 ## 3. Medidas e Cálculos (DAX)
 
-Apresente as fórmulas DAX mais importantes ou complexas utilizadas no dashboard.  
+As principais medidas e fórmulas DAX utilizadas no dashboard foram: 
 
 **Exemplos:**  
 
-| Métrica           | Fórmula DAX                                               | Descrição                                      |
-|------------------|----------------------------------------------------------|-----------------------------------------------|
-| Média de CSAT     | `CALCULATE(AVERAGE('CS'[Nota]), 'CS'[Status] = "Fechado")` | Calcula a nota média dos chamados fechados    |
-| Tempo Médio       | `AVERAGE('Chamados'[TempoTratamento])`                  | Calcula o tempo médio de tratamento dos chamados |
-| Chamados Abertos  | `COUNTROWS(FILTER('Chamados', 'Chamados'[Status]="Aberto"))` | Contagem de chamados ainda abertos           |
-
-> Observação: sempre documentar o propósito de cada medida para facilitar manutenção e ajustes futuros.
+| Métrica           | Medidas e Cálculos | Descrição  |                                    
+|-------------------|----------------------------------------------------------|----------------------------------------------------------|
+| Tempo de Resolução (HH:MM:SS)     | VAR hours = ROUNDDOWN([tempo de resolucao]/ 3600, 0) \ VAR minutes = ROUNDDOWN(MOD([tempo de resolucao], 3600) / 60, 0) \ VAR seconds = INT(MOD([tempo de resolucao], 60))|Converte o tempo de resolução em segundos para o formato legível `HH:MM:SS`  |
+| **Semana do Mês**              | `"Semana " & 1 + WEEKNUM('DIM - Calendar Resolucao'[Date]) - WEEKNUM(STARTOFMONTH('DIM - Calendar Resolucao'[Date]))` | Identifica a semana do mês para cada data, facilitando análises temporais. |
+| **Chamados**                   | `COUNTROWS('FT - Chamados')` | Conta o total de registros (linhas) na tabela de fatos de chamados. |
+| **Total de Chamados**          | `DISTINCTCOUNT('FT - Chamados'[Chave do chamado])` | Conta o número de chamados distintos, evitando duplicidades. |
+| **Tempo de Resolução**        | `DATEDIFF('FT - Chamados'[Criado], 'FT - Chamados'[Resolvido], SECOND)` | Calcula o tempo total de resolução dos chamados em segundos. |
+| **Tempo Médio de Resolução**  | `AVERAGE('FT - Chamados'[Tempo de resolucao])` | Retorna o tempo médio de resolução dos chamados. |
+| **Total de Clientes**         | `DISTINCTCOUNT('FT - Chamados'[Associação])` | Conta o número de clientes únicos associados aos chamados. |
+| **Chamados por Área**         | `COUNTROWS('FT - Areas realacionadas')` | Conta o total de chamados registrados por área responsável. |
+| **DIM - Calendar Resolucao**  | | Criação de calendário dinâmico com base nas datas de resolução, permitindo análises por período. | 
 
