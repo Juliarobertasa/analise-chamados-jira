@@ -5,7 +5,9 @@
 Estrutura do dashboard (páginas, filtros e elementos visuais chave).  
 
 **Exemplo de estrutura:**  
-> **Número de páginas:** 3  
+> **Número de páginas:** 3
+> 
+> Dados como quantidade e data foram anonimizados.
   - Visão Geral
    <img width="1438" height="805" alt="Captura de tela 2025-10-19 123206" src="https://github.com/user-attachments/assets/e32d850e-c664-4e50-80e6-5e3d368b7264" />
   - Quantidade por área
