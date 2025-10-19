@@ -5,11 +5,15 @@
 Estrutura do dashboard (páginas, filtros e elementos visuais chave).  
 
 **Exemplo de estrutura:**  
-- **Número de páginas:** 3  
-  - Visão Geral  
-  - Quantidade por área  
-  - Análise por relator  
-- **Filtros utilizados:**  
+> **Número de páginas:** 3  
+  - Visão Geral
+   <img width="1438" height="805" alt="Captura de tela 2025-10-19 123206" src="https://github.com/user-attachments/assets/e32d850e-c664-4e50-80e6-5e3d368b7264" />
+  - Quantidade por área
+   <img width="1438" height="807" alt="Captura de tela 2025-10-19 123216" src="https://github.com/user-attachments/assets/08878a7e-dd77-4119-a029-b031613015c7" />
+  - Análise por relator
+   <img width="1437" height="806" alt="Captura de tela 2025-10-19 123231" src="https://github.com/user-attachments/assets/0b45484a-c405-47da-8f52-817f740bf63b" />
+    
+- **Filtros utilizados**:
   - Temporal (período de análise)  
   - Tipo de solicitação
   - Cliente  
@@ -17,10 +21,9 @@ Estrutura do dashboard (páginas, filtros e elementos visuais chave).
   - Gráficos de barras e linhas  
   - Tabelas detalhadas  
   - Cards de contagem 
-- **Screenshots:**  
-  > Inserir imagens exportadas do Power BI ou links para visualização
 
 ---
+
 
 ## 2. Conclusões e Insights Chave
 
