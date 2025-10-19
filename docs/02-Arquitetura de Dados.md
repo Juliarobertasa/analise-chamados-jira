@@ -4,15 +4,10 @@
 
 No MVP, os dados são exportados diretamente do Jira por meio de planilhas CSV. Nas próximas versões, será implementada uma integração via API, permitindo a atualização automática e em tempo real dos dados, eliminando a necessidade de exportações manuais. 
 
-**Diagrama simplificado do fluxo de dados:**  
-
 ---
 
 ## 2. Modelagem e Relacionamentos
 
-Descreva o modelo de dados (Esquema Estrela ou Floco de Neve) e as principais tabelas.  
-
-**Exemplo:** Modelo de Esquema Estrela  
 
 | Tipo      | Nome da Tabela       | Descrição                                      |
 |-----------|-------------------|-----------------------------------------------|
